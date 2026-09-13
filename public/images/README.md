@@ -4,7 +4,9 @@
 | --- | --- | --- |
 | `Facetune_25-08-2026-17-01-47.jpeg` | Hero (`components/Hero.tsx`) | ✅ Added — full-body portrait of the stylist holding scissors and a round brush. |
 | `BBPhoto-137.JPEG` | Color Experience (`components/ColorExperience.tsx`) | ✅ Added — hair color being poured into a glass. |
-| `BBPhoto-140.JPEG` | Services (`components/Services.tsx`) | ⏳ **Still needed** — flat-lay of professional brushes, scissors, combs, clips, and black-and-cream checkerboard foils. Add it here with this exact filename and it will replace the "Image pending" placeholder automatically — no code changes needed. |
+| `BBPhoto-140.JPEG` | Services (`components/Services.tsx`) | ✅ Added — flat-lay of professional brushes, scissors, combs, clips, and black-and-cream checkerboard foils. |
+
+All three supplied photographs are now in place — no more placeholders on the site.
 
 ## Gallery (`images/gallery/`)
 

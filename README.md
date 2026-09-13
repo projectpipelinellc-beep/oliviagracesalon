@@ -14,13 +14,10 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Photography
 
-The hero portrait, the color-pour photo, and eight real work/portfolio
-photos are in place. One photo is still missing — the tools flat-lay for
-the Services section — and renders a labeled on-brand placeholder instead
-of a stock photo until it's added. See
-[`public/images/README.md`](./public/images/README.md) for the exact
-filename and where it's used — drop the real file into `public/images/`
-and it'll appear automatically, no code changes needed.
+All three supplied photographs (hero portrait, tools flat-lay, color pour)
+and eight real work/portfolio photos are in place — no placeholders left.
+See [`public/images/README.md`](./public/images/README.md) for details, and
+for how to add more portfolio photos to the gallery later.
 
 ## Before launch: business information still needed
 
@@ -39,15 +36,14 @@ real information must be added before launch:
    a different provider in `app/api/contact/route.ts`) to activate it. Until
    then, submissions show an honest "not connected yet" message rather than
    silently disappearing.
-4. **The Services flat-lay photo** — see above.
-5. **Privacy Policy specifics** — `/privacy` is a complete, plain-language
+4. **Privacy Policy specifics** — `/privacy` is a complete, plain-language
    starter policy, not legal advice. It's flagged inline with a "starter
    template notice" and specific `[Owner to add ...]` placeholders (an
    effective date, a retention period, a contact email) that should be
    filled in and reviewed by a qualified professional before launch,
    especially regarding whichever email/analytics/marketing tools end up in
    use and the privacy laws that apply to the salon's location.
-6. **Cookie categories** — Analytics and Marketing cookie toggles are
+5. **Cookie categories** — Analytics and Marketing cookie toggles are
    present but intentionally disabled, because no analytics or marketing
    tool is installed. If one is added later, flip the matching flag in
    `lib/cookie-consent.ts` (`availableTools`) and only load that script
