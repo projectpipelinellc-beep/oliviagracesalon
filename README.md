@@ -21,40 +21,35 @@ for how to add more portfolio photos to the gallery later.
 
 ## Before launch: business information still needed
 
-No business details were invented anywhere in this site. The following
-real information must be added before launch:
+Phone, email, address, business hours, and Instagram are all filled in with
+real values in [`lib/site-config.ts`](./lib/site-config.ts)
+(`siteConfig.contact`). The only remaining placeholder:
 
-1. **Phone, email, address, business hours, Instagram** — edit the
-   placeholders in [`lib/site-config.ts`](./lib/site-config.ts)
-   (`siteConfig.contact`). Each one currently renders a clearly labeled
-   "to be added" placeholder in the Contact section.
-2. **Production domain** — update `siteConfig.url` in the same file once a
+1. **Production domain** — update `siteConfig.url` in the same file once a
    domain is chosen (used for metadata, Open Graph tags, and the sitemap).
-3. **Contact form email delivery** — the form at `/api/contact` validates
-   and is ready to send, but no email provider is connected yet. Set the
-   `RESEND_API_KEY` and `CONTACT_TO_EMAIL` environment variables (or swap in
-   a different provider in `app/api/contact/route.ts`) to activate it. Until
-   then, submissions show an honest "not connected yet" message rather than
-   silently disappearing.
-4. **Privacy Policy specifics** — `/privacy` is a complete, plain-language
+2. **Privacy Policy specifics** — `/privacy` is a complete, plain-language
    starter policy, not legal advice. It's flagged inline with a "starter
-   template notice" and specific `[Owner to add ...]` placeholders (an
-   effective date, a retention period, a contact email) that should be
-   filled in and reviewed by a qualified professional before launch,
-   especially regarding whichever email/analytics/marketing tools end up in
-   use and the privacy laws that apply to the salon's location.
-5. **Cookie categories** — Analytics and Marketing cookie toggles are
+   template notice" and an `[Owner to add before launch]` effective date
+   placeholder; it should be reviewed by a qualified professional before
+   launch, particularly regarding the privacy laws that apply to the
+   salon's location.
+3. **Cookie categories** — Analytics and Marketing cookie toggles are
    present but intentionally disabled, because no analytics or marketing
    tool is installed. If one is added later, flip the matching flag in
    `lib/cookie-consent.ts` (`availableTools`) and only load that script
    behind its consent category.
 
+Booking happens entirely through Vagaro (every "Book Now" link), so there is
+no on-site contact form — the Contact section is informational only (phone,
+email, address, hours, Instagram).
+
 ## Tech notes
 
 - **Framework**: Next.js 16 (App Router) + TypeScript + Tailwind CSS.
-- **Fonts**: Cormorant Garamond (serif, headings) + Inter (sans, body), both
-  self-hosted at build time via `next/font/google` — no runtime requests to
-  Google Fonts, and nothing to gate behind cookie consent.
+- **Fonts**: Cormorant Garamond (serif, main headings) + Bodoni Moda italic
+  (section subheadings) + Inter (sans, body), all self-hosted at build time
+  via `next/font/google` — no runtime requests to Google Fonts, and nothing
+  to gate behind cookie consent.
 - **Images**: `next/image` throughout for optimization (AVIF/WebP,
   responsive `sizes`), fixed aspect ratios to prevent layout shift, and
   descriptive `alt` text. `components/PhotoSlot.tsx` gracefully falls back
@@ -64,4 +59,4 @@ real information must be added before launch:
   `localStorage`, and can be reopened anytime via "Cookie Preferences" in
   the footer.
 - **Deployment**: designed for Vercel with no special configuration beyond
-  the environment variables above.
+  the environment variable above.

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Bodoni_Moda, Cormorant_Garamond, Inter } from "next/font/google";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import CookieConsent from "@/components/CookieConsent";
@@ -10,6 +10,16 @@ const serif = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   variable: "--font-serif",
+  display: "swap",
+});
+
+// A higher-contrast display serif used for section subheadings only —
+// the main hero headline stays in Cormorant Garamond above.
+const subheading = Bodoni_Moda({
+  subsets: ["latin"],
+  weight: ["500", "600"],
+  style: ["italic"],
+  variable: "--font-subheading",
   display: "swap",
 });
 
@@ -49,19 +59,47 @@ export const metadata: Metadata = {
   },
 };
 
-// Only fields we can actually verify are included; unknown fields
-// (address, phone, hours) are intentionally omitted rather than invented.
+// Only verified information is included here — nothing invented.
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "HairSalon",
   name: siteConfig.name,
   url: siteConfig.url,
   image: `${siteConfig.url}/images/Facetune_25-08-2026-17-01-47.jpeg`,
+  telephone: siteConfig.contact.phone,
+  email: siteConfig.contact.email,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "16A Fisher Avenue",
+    addressLocality: "Tuckahoe",
+    addressRegion: "NY",
+  },
+  sameAs: [siteConfig.contact.instagramUrl],
+  openingHoursSpecification: siteConfig.contact.hours
+    .filter((h) => h.time !== "Closed")
+    .map(({ day, time }) => {
+      const [opens, closes] = time.split(/\s*[–-]\s*/);
+      return {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: day,
+        opens: to24Hour(opens),
+        closes: to24Hour(closes),
+      };
+    }),
 };
+
+function to24Hour(time: string): string {
+  const match = time.trim().match(/^(\d{1,2}):(\d{2})\s*(AM|PM)$/i);
+  if (!match) return time;
+  let [, hourStr, minute, meridiem] = match;
+  let hour = parseInt(hourStr, 10) % 12;
+  if (meridiem.toUpperCase() === "PM") hour += 12;
+  return `${String(hour).padStart(2, "0")}:${minute}`;
+}
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${serif.variable} ${sans.variable}`}>
+    <html lang="en" className={`${serif.variable} ${subheading.variable} ${sans.variable}`}>
       <body className="font-sans">
         <script
           type="application/ld+json"

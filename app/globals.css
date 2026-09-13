@@ -20,10 +20,15 @@
   }
 
   h1,
-  h2,
   h3,
   h4 {
     @apply font-serif;
+  }
+
+  /* Section subheadings get a higher-contrast display serif for a more
+     editorial, elegant feel than the body serif used elsewhere. */
+  h2 {
+    @apply font-subheading italic;
   }
 
   /* Visible, high-contrast focus states everywhere */

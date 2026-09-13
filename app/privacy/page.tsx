@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "How Olivia Grace Salon collects, uses, and protects information submitted through this website.",
+    "How Olivia Grace Salon's website handles cookies, third-party services, and visitor information.",
 };
 
 function Section({
@@ -45,25 +45,18 @@ export default function PrivacyPage() {
         </div>
 
         <div className="mt-6">
-          <Section title="Information collected through the contact form">
+          <Section title="Information collected on this website">
             <p>
-              When you submit the contact form on this site, we collect the
-              information you provide: your name, email address, phone number (if
-              given), the service you&rsquo;re interested in, and your message.
+              This site does not have a contact form and does not collect personal
+              information through any on-site submission. The Contact section simply
+              displays {siteConfig.name}&rsquo;s phone number, email address, street
+              address, business hours, and Instagram handle so visitors can reach out
+              directly through whichever channel they prefer.
             </p>
             <p>
-              We do not currently use analytics or advertising cookies on this site.
-              If that changes, this policy and the cookie preference panel will be
-              updated to match, and those cookies will remain off until you consent.
-            </p>
-          </Section>
-
-          <Section title="How information may be used">
-            <p>
-              Information submitted through the contact form is used only to respond
-              to your inquiry and, if you become a client, to communicate about
-              appointments and services. It is not sold, and it is not used for
-              advertising.
+              If you call, email, or message the salon directly using those details,
+              that conversation is handled through the phone carrier, email provider,
+              or Instagram itself — not collected or stored by this website.
             </p>
           </Section>
 
@@ -99,37 +92,30 @@ export default function PrivacyPage() {
               practices separately.
             </p>
             <p>
-              If the contact form&rsquo;s email delivery is connected to a
-              transactional email provider in the future, that provider will process
-              your submission solely to deliver the message to {siteConfig.name}.
+              Similarly, the Instagram link on this site takes you to Instagram
+              itself, which has its own separate privacy practices.
             </p>
           </Section>
 
           <Section title="Data retention">
             <p>
-              Contact form submissions are retained only as long as reasonably needed
-              to respond to your inquiry and for basic business record-keeping.{" "}
-              <em>
-                [Owner to specify a concrete retention period once a form backend
-                and/or mailbox policy is in place.]
-              </em>
+              Because this website itself doesn&rsquo;t collect contact-form
+              submissions, there is no such data for the website to retain. Your
+              cookie preference (if you&rsquo;ve set one) is kept in your browser
+              until you change it or clear your browser&rsquo;s site data.
             </p>
           </Section>
 
           <Section title="Your choices">
             <ul className="list-disc space-y-2 pl-5">
               <li>
-                You can decline to submit the contact form and instead reach out
-                using the phone number or email listed in the Contact section, once
-                added.
-              </li>
-              <li>
                 You can accept, reject, or customize non-essential cookies at any
                 time via &ldquo;Cookie Preferences&rdquo; in the footer.
               </li>
               <li>
-                You can request that we delete information you&rsquo;ve submitted by
-                contacting us using the details below.
+                You can choose whether and how to contact the salon directly — by
+                phone, email, Instagram, or through Vagaro — using the details in the
+                Contact section.
               </li>
             </ul>
           </Section>
@@ -137,16 +123,12 @@ export default function PrivacyPage() {
           <Section title="Contact information">
             <p>
               Questions about this policy can be directed to{" "}
-              {siteConfig.contact.email ? (
-                <a
-                  href={`mailto:${siteConfig.contact.email}`}
-                  className="underline hover:text-gold"
-                >
-                  {siteConfig.contact.email}
-                </a>
-              ) : (
-                <em>[Owner to add a contact email before launch]</em>
-              )}
+              <a
+                href={`mailto:${siteConfig.contact.email}`}
+                className="underline hover:text-gold"
+              >
+                {siteConfig.contact.email}
+              </a>
               .
             </p>
           </Section>

@@ -1,5 +1,4 @@
 import { siteConfig } from "@/lib/site-config";
-import ContactForm from "./ContactForm";
 import SectionHeading from "./SectionHeading";
 
 function ContactRow({
@@ -8,26 +7,18 @@ function ContactRow({
   href,
 }: {
   label: string;
-  value: string | null;
+  value: string;
   href?: string;
 }) {
-  const isPlaceholder = !value;
-  const display = value ?? `${label} — to be added`;
-
   return (
     <div className="border-b border-taupe/20 py-4 first:pt-0">
       <p className="eyebrow mb-1">{label}</p>
-      {isPlaceholder ? (
-        <p className="font-sans text-base italic text-taupe">{display}</p>
-      ) : href ? (
-        <a
-          href={href}
-          className="font-sans text-base text-espresso hover:text-gold"
-        >
-          {display}
+      {href ? (
+        <a href={href} className="font-sans text-base text-espresso hover:text-gold">
+          {value}
         </a>
       ) : (
-        <p className="font-sans text-base text-espresso">{display}</p>
+        <p className="font-sans text-base text-espresso">{value}</p>
       )}
     </div>
   );
@@ -43,33 +34,36 @@ export default function Contact() {
 
         <div className="mt-14 grid gap-14 lg:grid-cols-2 lg:gap-20">
           <div>
-            <ContactRow
-              label="Phone"
-              value={contact.phone}
-              href={contact.phone ? `tel:${contact.phone}` : undefined}
-            />
-            <ContactRow
-              label="Email"
-              value={contact.email}
-              href={contact.email ? `mailto:${contact.email}` : undefined}
-            />
+            <ContactRow label="Phone" value={contact.phone} href={`tel:+1${contact.phone.replace(/\D/g, "")}`} />
+            <ContactRow label="Email" value={contact.email} href={`mailto:${contact.email}`} />
             <ContactRow label="Salon Address" value={contact.address} />
-            <ContactRow label="Business Hours" value={contact.hours} />
             <ContactRow
               label="Instagram"
-              value={contact.instagram}
-              href={contact.instagram ?? undefined}
+              value={`@${contact.instagramHandle}`}
+              href={contact.instagramUrl}
             />
-
-            <p className="mt-8 font-sans text-xs leading-relaxed text-taupe">
-              Details above marked &ldquo;to be added&rdquo; are placeholders — no
-              contact information has been invented. The salon owner should replace
-              them in <code className="font-mono">lib/site-config.ts</code> before
-              launch.
-            </p>
           </div>
 
-          <ContactForm />
+          <div>
+            <p className="eyebrow mb-1">Business Hours</p>
+            <dl className="mt-3">
+              {contact.hours.map(({ day, time }) => (
+                <div
+                  key={day}
+                  className="flex items-baseline justify-between border-b border-taupe/20 py-3 first:pt-0 last:border-b-0"
+                >
+                  <dt className="font-sans text-base text-espresso">{day}</dt>
+                  <dd
+                    className={`font-sans text-base ${
+                      time === "Closed" ? "italic text-taupe" : "text-espresso/80"
+                    }`}
+                  >
+                    {time}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
         </div>
       </div>
     </section>

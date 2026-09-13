@@ -1,12 +1,9 @@
 /**
  * Central site configuration.
  *
- * IMPORTANT — BUSINESS INFORMATION:
- * Every field marked `null` below is a real value the salon owner must
- * supply before launch. Nothing has been invented or guessed. Search the
- * codebase for `siteConfig.contact` to find every place a value is
- * rendered — each one already falls back to a clearly labeled placeholder
- * in the UI when the value is missing.
+ * BUSINESS INFORMATION: all contact fields below are real values supplied
+ * by the salon owner. `siteConfig.url` (the production domain) is still a
+ * placeholder — update it before launch.
  */
 
 export const siteConfig = {
@@ -20,16 +17,20 @@ export const siteConfig = {
   vagaroUrl: "https://www.vagaro.com/oliviagracesalon",
 
   contact: {
-    // TODO (before launch): add the salon's real phone number.
-    phone: null as string | null,
-    // TODO (before launch): add the salon's real contact email address.
-    email: null as string | null,
-    // TODO (before launch): add the salon's real street address.
-    address: null as string | null,
-    // TODO (before launch): add the salon's real business hours.
-    hours: null as string | null,
-    // TODO (before launch): add the salon's real Instagram handle/URL.
-    instagram: null as string | null,
+    phone: "914-450-3935",
+    email: "olivia@oliviagracesalon.com",
+    address: "16A Fisher Avenue, Tuckahoe, New York",
+    instagramHandle: "oliviagracesalon",
+    instagramUrl: "https://www.instagram.com/oliviagracesalon/",
+    hours: [
+      { day: "Sunday", time: "Closed" },
+      { day: "Monday", time: "10:00 AM – 4:00 PM" },
+      { day: "Tuesday", time: "9:00 AM – 6:00 PM" },
+      { day: "Wednesday", time: "9:00 AM – 6:00 PM" },
+      { day: "Thursday", time: "10:00 AM – 8:00 PM" },
+      { day: "Friday", time: "9:00 AM – 6:00 PM" },
+      { day: "Saturday", time: "9:00 AM – 6:00 PM" },
+    ],
   },
 
   nav: [
