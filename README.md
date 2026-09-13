@@ -12,14 +12,15 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-## Adding the salon's photography
+## Photography
 
-Three supplied photographs are referenced throughout the site but weren't
-available as files in this build, so each spot currently renders a labeled,
-on-brand placeholder instead of a stock photo. See
+The hero portrait, the color-pour photo, and eight real work/portfolio
+photos are in place. One photo is still missing — the tools flat-lay for
+the Services section — and renders a labeled on-brand placeholder instead
+of a stock photo until it's added. See
 [`public/images/README.md`](./public/images/README.md) for the exact
-filenames and where each one is used — drop the real files into
-`public/images/` and they'll appear automatically, no code changes needed.
+filename and where it's used — drop the real file into `public/images/`
+and it'll appear automatically, no code changes needed.
 
 ## Before launch: business information still needed
 
@@ -38,8 +39,7 @@ real information must be added before launch:
    a different provider in `app/api/contact/route.ts`) to activate it. Until
    then, submissions show an honest "not connected yet" message rather than
    silently disappearing.
-4. **The three supplied photographs and a future work gallery** — see
-   above.
+4. **The Services flat-lay photo** — see above.
 5. **Privacy Policy specifics** — `/privacy` is a complete, plain-language
    starter policy, not legal advice. It's flagged inline with a "starter
    template notice" and specific `[Owner to add ...]` placeholders (an
@@ -55,7 +55,7 @@ real information must be added before launch:
 
 ## Tech notes
 
-- **Framework**: Next.js 14 (App Router) + TypeScript + Tailwind CSS.
+- **Framework**: Next.js 16 (App Router) + TypeScript + Tailwind CSS.
 - **Fonts**: Cormorant Garamond (serif, headings) + Inter (sans, body), both
   self-hosted at build time via `next/font/google` — no runtime requests to
   Google Fonts, and nothing to gate behind cookie consent.

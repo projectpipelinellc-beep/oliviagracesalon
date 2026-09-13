@@ -4,14 +4,14 @@ export default function ColorExperience() {
   return (
     <section aria-label="The color experience" className="bg-ivory">
       <div className="container-editorial grid items-center gap-14 py-24 sm:py-28 lg:grid-cols-12 lg:gap-8">
-        <div className="lg:col-span-7 lg:col-start-1">
+        <div className="lg:col-span-6 lg:col-start-1">
           <PhotoSlot
             src="/images/BBPhoto-137.JPEG"
-            alt="Close-up of hair color being poured into a glass mixing bowl."
+            alt="Close-up of hair color being poured from a bottle into a stemmed glass."
             filename="BBPhoto-137.JPEG"
             description="Hair color being poured and mixed — the color experience."
-            aspectClassName="aspect-[4/3]"
-            sizes="(min-width: 1024px) 58vw, 100vw"
+            aspectClassName="aspect-[2/3]"
+            sizes="(min-width: 1024px) 50vw, 100vw"
           />
         </div>
 

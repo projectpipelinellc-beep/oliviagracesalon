@@ -32,11 +32,11 @@ export default function Hero() {
         <div className="order-1 lg:order-2">
           <PhotoSlot
             src="/images/Facetune_25-08-2026-17-01-47.jpeg"
-            alt="Olivia, stylist and owner of Olivia Grace Salon, standing full-length holding a round brush and shears."
+            alt="Stylist from Olivia Grace Salon standing full-length in a black blazer and skirt, holding a round brush and a pair of shears."
             filename="Facetune_25-08-2026-17-01-47.jpeg"
             description="Full-body portrait of the stylist holding scissors and a round brush — primary hero image."
             priority
-            aspectClassName="aspect-[4/5] lg:aspect-auto lg:h-full lg:min-h-[560px]"
+            aspectClassName="aspect-[2/3]"
             objectPosition="top center"
             sizes="(min-width: 1024px) 50vw, 100vw"
           />
