@@ -42,6 +42,7 @@ export default function Contact() {
               value={`@${contact.instagramHandle}`}
               href={contact.instagramUrl}
             />
+            <ContactRow label="Facebook" value="Olivia Grace Salon" href={contact.facebookUrl} />
           </div>
 
           <div>

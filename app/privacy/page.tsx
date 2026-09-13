@@ -50,13 +50,14 @@ export default function PrivacyPage() {
               This site does not have a contact form and does not collect personal
               information through any on-site submission. The Contact section simply
               displays {siteConfig.name}&rsquo;s phone number, email address, street
-              address, business hours, and Instagram handle so visitors can reach out
-              directly through whichever channel they prefer.
+              address, business hours, and Instagram and Facebook pages so visitors
+              can reach out directly through whichever channel they prefer.
             </p>
             <p>
               If you call, email, or message the salon directly using those details,
               that conversation is handled through the phone carrier, email provider,
-              or Instagram itself — not collected or stored by this website.
+              or the relevant social platform — not collected or stored by this
+              website.
             </p>
           </Section>
 
@@ -92,8 +93,9 @@ export default function PrivacyPage() {
               practices separately.
             </p>
             <p>
-              Similarly, the Instagram link on this site takes you to Instagram
-              itself, which has its own separate privacy practices.
+              Similarly, the Instagram and Facebook links on this site take you to
+              those platforms directly, each with its own separate privacy
+              practices.
             </p>
           </Section>
 
@@ -114,8 +116,8 @@ export default function PrivacyPage() {
               </li>
               <li>
                 You can choose whether and how to contact the salon directly — by
-                phone, email, Instagram, or through Vagaro — using the details in the
-                Contact section.
+                phone, email, Instagram, Facebook, or through Vagaro — using the
+                details in the Contact section.
               </li>
             </ul>
           </Section>

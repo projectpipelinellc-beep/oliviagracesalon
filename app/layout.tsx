@@ -74,7 +74,7 @@ const jsonLd = {
     addressLocality: "Tuckahoe",
     addressRegion: "NY",
   },
-  sameAs: [siteConfig.contact.instagramUrl],
+  sameAs: [siteConfig.contact.instagramUrl, siteConfig.contact.facebookUrl],
   openingHoursSpecification: siteConfig.contact.hours
     .filter((h) => h.time !== "Closed")
     .map(({ day, time }) => {

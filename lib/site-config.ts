@@ -22,6 +22,10 @@ export const siteConfig = {
     address: "16A Fisher Avenue, Tuckahoe, New York",
     instagramHandle: "oliviagracesalon",
     instagramUrl: "https://www.instagram.com/oliviagracesalon/",
+    // TODO: confirm this is the salon's actual Facebook page URL — only
+    // the page name ("Olivia Grace Salon") was given, so this slug is
+    // inferred to match the Instagram handle. Update if incorrect.
+    facebookUrl: "https://www.facebook.com/oliviagracesalon",
     hours: [
       { day: "Sunday", time: "Closed" },
       { day: "Monday", time: "10:00 AM – 4:00 PM" },
