@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { siteConfig } from "@/lib/site-config";
 import BookNowLink from "./BookNowLink";
+import CallNowLink from "./CallNowLink";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -57,7 +58,8 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden items-center gap-3 lg:flex">
+          <CallNowLink className="border border-espresso/30 px-6 py-2.5 font-sans text-sm tracking-wide text-espresso transition-colors duration-250 hover:border-gold hover:text-gold" />
           <BookNowLink className="border border-gold px-6 py-2.5 font-sans text-sm tracking-wide text-espresso transition-colors duration-250 hover:bg-gold hover:text-ivory" />
         </div>
 
@@ -107,7 +109,10 @@ export default function Header() {
                 {item.label}
               </Link>
             ))}
-            <BookNowLink className="mt-6 border border-gold px-6 py-3 text-center font-sans text-sm tracking-wide text-espresso transition-colors duration-250 hover:bg-gold hover:text-ivory" />
+            <div className="mt-6 flex flex-col gap-3">
+              <CallNowLink className="border border-espresso/30 px-6 py-3 text-center font-sans text-sm tracking-wide text-espresso transition-colors duration-250 hover:border-gold hover:text-gold" />
+              <BookNowLink className="border border-gold px-6 py-3 text-center font-sans text-sm tracking-wide text-espresso transition-colors duration-250 hover:bg-gold hover:text-ivory" />
+            </div>
           </nav>
         </div>
       )}
