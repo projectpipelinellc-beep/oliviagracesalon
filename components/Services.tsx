@@ -19,9 +19,9 @@ const services = [
       "Precision cutting shaped to your hair's texture and how you actually wear it day to day.",
   },
   {
-    title: "Weft Extensions",
+    title: "Weft & Tape-In Extensions",
     description:
-      "Sewn-in weft extensions added and blended for natural-looking length and fullness, matched to your color and texture.",
+      "Weft or tape-in extensions added and blended for natural-looking length and fullness, matched to your color and texture.",
   },
   {
     title: "Blowouts & Styling",

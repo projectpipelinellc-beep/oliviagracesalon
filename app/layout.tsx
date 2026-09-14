@@ -73,6 +73,7 @@ const jsonLd = {
     streetAddress: "16A Fisher Avenue",
     addressLocality: "Tuckahoe",
     addressRegion: "NY",
+    postalCode: "10707",
   },
   sameAs: [siteConfig.contact.instagramUrl, siteConfig.contact.facebookUrl],
   openingHoursSpecification: siteConfig.contact.hours

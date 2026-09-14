@@ -19,7 +19,7 @@ export const siteConfig = {
   contact: {
     phone: "914-450-3935",
     email: "olivia@oliviagracesalon.com",
-    address: "16A Fisher Avenue, Tuckahoe, New York",
+    address: "16A Fisher Avenue, Tuckahoe, New York 10707",
     instagramHandle: "oliviagracesalon",
     instagramUrl: "https://www.instagram.com/oliviagracesalon/",
     // TODO: confirm this is the salon's actual Facebook page URL — only
